@@ -1,15 +1,16 @@
 :root {
-    --colorBackground: #ffffff;
+    --colorBackground: #fdfdfd;
 
     --colorContent: #ffffff;
     --colorContentDark: #111111;
 
-    --colorContentDarkSecondary: #222222;
+    --colorContentDarkSecondary: #333333;
 
     --colorPrimary: #ff4848;
     --colorPrimaryHover: #ff2424;
 
     --colorSecondary: #5f50e4;
+    --colorSecondaryHover: #3b28e7;
 
     --colorTertiary: #f8f8fa;
     --colorTertiaryHover: #f0f0f0;

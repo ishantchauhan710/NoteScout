@@ -1,6 +1,6 @@
 .container-header {
-    /* background-color: yellow; */
-    padding: 15px 10px;
+    height: 70px;
+    padding: 0px 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -9,7 +9,7 @@
 .btn-nav {
     border-radius: 5px;
     border: 0;
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding: 10px 15px;
     cursor: pointer;
     font-weight: 400;
@@ -41,7 +41,7 @@
     color: var(--colorContentDarkSecondary);
     text-decoration: none;
     padding: 10px;
-    font-size: 1.05rem;
+    font-size: 1.2rem;
     font-weight: 500;
     margin-right: 10px;
 }
@@ -51,7 +51,7 @@
 }
 
 .container-logo {
-    font-size: 1.7rem;
+    font-size: 2rem;
     font-weight: 600;
     color: var(--colorContentDarkSecondary);
     cursor: pointer;

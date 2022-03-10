@@ -10,3 +10,52 @@ body {
     padding: 0;
     background-color: var(--colorBackground);
 }
+
+.container-landing-page {
+    height: calc(100vh - 70px);
+    display: flex;
+}
+
+.container-landing-page-child1 {
+    padding: 40px 40px 40px 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-landing-page-child2 {
+    width: 150%;
+}
+
+.txt-landing-page-title {
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-top: 20px;
+    color: var(--colorContentDark);
+}
+
+.txt-landing-page-description {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-top: 20px;
+    font-weight: 400;
+    line-height: 150%;
+    color: var(--colorContentDarkSecondary);
+}
+
+
+.btn-getstarted-landing-page {
+    width: 25%;
+    border-radius: 5px;
+    border: 0;
+    font-size: 1rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: 400;
+    margin-top: 40px;
+    background-color: var(--colorSecondary);
+    color: var(--colorContent);
+}
+
+.btn-getstarted-landing-page:hover {
+    background-color: var(--colorSecondaryHover);
+}

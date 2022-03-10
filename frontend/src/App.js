@@ -5,13 +5,14 @@ import './stylesheets/HeaderComponent.css';
 
 import HeaderComponent from './components/headers/HeaderComponent';
 import FooterComponent from './components/footers/FooterComponent';
+import LandingPage from './pages/LandingPage';
 
 
 function App() {
   return (
     <div className="App">
       <HeaderComponent />
-      <FooterComponent />
+      <LandingPage />
     </div>
   );
 }
