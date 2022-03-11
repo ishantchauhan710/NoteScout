@@ -1,35 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import NoteComponent from '../components/cards/NoteComponent'
-
-const dummyNotes = [
-    {
-        _id: "1",
-        title: "Note 1",
-        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        category: "Category A"
-    },
-    {
-        _id: "2",
-        title: "Note 2",
-        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        category: "Category A"
-    },
-    {
-        _id: "3",
-        title: "Note 3",
-        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        category: "Category B"
-    },
-    {
-        _id: "4",
-        title: "Note 4",
-        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        category: "Category B"
-    }
-    
-];
+import axios from 'axios'
 
 const NotesHomePage = () => {
+
+    const [notes,setNotes] = useState([]);
+
+    const fetchNotes = async () => {
+
+        try {
+            const {data} = await axios.get('/api/notes');
+            console.log('Notes API: ',data);
+            setNotes(data); 
+            
+        } catch(e) {
+            console.log(e.message);
+        }
+        
+    }
+
+    useEffect(() => {
+        fetchNotes();
+    },[]);
+
+
   return (
     <div className='container-notes-home-page'>
        <div className='container-notes-data'>
@@ -38,9 +32,9 @@ const NotesHomePage = () => {
 
         <div className='container-notes'>
            {
-               dummyNotes.map((note) => (
-                    <NoteComponent />
-               ))
+               (notes.map((note) => (
+                <NoteComponent key={note._id} noteTitle={note.noteTitle} noteContent={note.noteContent} noteCategory={note.noteCategory} />
+           )))
            }
         </div>
 
