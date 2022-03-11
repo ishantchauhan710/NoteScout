@@ -1,36 +1,39 @@
-import React from 'react'
-import {Box, Tab, Tabs} from '@material-ui/core'
-import {TabContext, TabPanel} from '@material-ui/lab'
+import {Box, Button, Modal} from '@material-ui/core';
+import AppContext, { AppState } from '../../AppContext';
 
-export const LoginSignupComponent = () => {
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
 
+export default function LoginSignupComponent() {
 
-    const [value, setValue] = React.useState(2);
+  const {openLoginModal,setOpenLoginModal} = AppState();
+
+  const handleOpen = () => setOpenLoginModal(true);
+  const handleClose = () => setOpenLoginModal(false);
 
   return (
     <div>
-    <TabContext value={value}>
-        <Tabs
-            value={value}
-            textColor="primary"
-            indicatorColor="primary"
-            onChange={(event, newValue) => {
-                setValue(newValue);
-            }}
-            >
-            <Tab label="Active TAB One" />
-            <Tab label="Active TAB Two" />
-            </Tabs>
-            <TabPanel value={1}>
-            Item One
-            </TabPanel>
-            <TabPanel value={2}>
-            Item Two
-            </TabPanel>
-            <TabPanel value={3}>
-            Item Three
-            </TabPanel>
-        </TabContext>
+      <Modal
+        open={openLoginModal}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+            Text in a modal
+       
+
+        </Box>
+      </Modal>
     </div>
-  )
+  );
 }

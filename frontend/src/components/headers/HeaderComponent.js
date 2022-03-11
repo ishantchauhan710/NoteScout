@@ -1,6 +1,14 @@
 import React from 'react'
+import { AppState } from '../../AppContext';
 
 const HeaderComponent = () => {
+
+  const {openLoginModal,setOpenLoginModal} = AppState();
+
+  const toggleModal = () => {
+    setOpenLoginModal(!openLoginModal);
+  }
+
   return (
     <div className='container-header'>
 
@@ -15,8 +23,8 @@ const HeaderComponent = () => {
       </div>
 
       <div>
-        <button className='btn-nav btn-secondary'>Login</button>
-        <button className='btn-nav btn-primary'>Sign up</button>
+        <button onClick={toggleModal} className='btn-nav btn-secondary'>Login</button>
+        <button onClick={toggleModal} className='btn-nav btn-primary'>Sign up</button>
       </div>
       
       

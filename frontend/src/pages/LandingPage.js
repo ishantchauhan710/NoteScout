@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import Lottie from 'lottie-react';
 import noteAnimation from '../assets/noteanimation.json';
-import { LoginSignupComponent } from '../components/dialog/LoginSignupComponent';
+import LoginSignupComponent from '../components/dialog/LoginSignupComponent';
 import { Modal } from '@material-ui/core';
+import AppContext from '../AppContext';
 
 const LandingPage = () => {
 
-    const [toggleModal,setToggleModal] = useState(false);
 
 
   return (
@@ -43,7 +43,7 @@ const LandingPage = () => {
             <Lottie animationData={noteAnimation} loop={true} autoplay={true} style={{height: 700}}></Lottie>
         </div>
 
-    
+    <LoginSignupComponent />
         
     </div>
   )
