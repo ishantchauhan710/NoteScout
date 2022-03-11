@@ -1,0 +1,11 @@
+.loading {
+    background-color: rgba(0,0,0,0.25);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    z-index: 10000; /*Based on ReactJS MaterialUI Component Value*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
