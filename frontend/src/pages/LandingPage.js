@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import Lottie from 'lottie-react';
 import noteAnimation from '../assets/noteanimation.json';
 import LoginSignupComponent from '../components/dialog/LoginSignupComponent';
-import { Modal } from '@material-ui/core';
-import AppContext, { AppState } from '../AppContext';
+import { AppState } from '../AppContext';
 
 const LandingPage = () => {
 

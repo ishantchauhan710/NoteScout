@@ -4,7 +4,10 @@
     --colorContent: #ffffff;
     --colorContentDark: #111111;
 
+    --colorContentDarkPrimary: #222222;
     --colorContentDarkSecondary: #333333;
+    --colorContentDarkTertiary: #555555;
+    
 
     --colorPrimary: #ff4848;
     --colorPrimaryHover: #ff2424;

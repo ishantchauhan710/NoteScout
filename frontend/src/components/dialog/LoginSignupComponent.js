@@ -1,5 +1,5 @@
-import {Box, Button, Modal} from '@material-ui/core';
-import AppContext, { AppState } from '../../AppContext';
+import {Box, Modal} from '@material-ui/core';
+import { AppState } from '../../AppContext';
 import { LoginSignupTab } from './LoginSignupTab';
 
 const style = {
@@ -17,7 +17,6 @@ export default function LoginSignupComponent() {
 
   const {openLoginModal,setOpenLoginModal} = AppState();
 
-  const handleOpen = () => setOpenLoginModal(true);
   const handleClose = () => setOpenLoginModal(false);
 
   return (
