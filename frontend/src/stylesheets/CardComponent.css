@@ -1,0 +1,63 @@
+
+.note {
+    width: 20%;
+    display: flex;
+    margin: 20px;
+    flex-direction: column;
+    border: 2px solid var(--colorBorderLight);
+    border-radius: 10px;
+    box-shadow: 2px 3px 4px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.note:hover {
+    outline: 3px solid var(--colorSecondary);
+}
+
+.note-image {
+    border-radius: 7px 7px 0px 0px;
+    margin: 2px;
+}
+
+.note-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 10px 10px 0 10px;
+    color: var(--colorContentDarkPrimary);
+}
+
+.note-content {
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin: 10px 10px 0 10px;
+    color: var(--colorContentDarkTertiary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 6; 
+    line-clamp: 6; 
+    -webkit-box-orient: vertical;
+}
+
+.note-category {
+    align-self: flex-start;
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: rgba(0,0,0,0.1);
+    color: var(--colorContentDarkTertiary);
+    font-size: 0.8rem;
+    margin: 10px 10px 0 10px;
+}
+
+.note-date {
+    align-self: flex-end;
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin: 10px 10px 10px 10px;
+    color: var(--colorContentDarkTertiary);
+}
+
+
+
+
+
