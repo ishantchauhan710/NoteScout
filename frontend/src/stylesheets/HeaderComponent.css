@@ -60,3 +60,18 @@
 .txt-logo {
     color: var(--colorSecondary);
 }
+
+@media(max-width: 700px) {
+    .container-logo {
+        margin-top: 4px;
+    }
+    .nav-link {
+        display: none;
+    }
+    .btn-nav {
+        font-size: 0.9rem;
+    }
+    .btn-secondary {
+        display: none;
+    }
+}

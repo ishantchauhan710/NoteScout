@@ -2,8 +2,7 @@ import './App.css';
 import './stylesheets/Variables.css';
 import './stylesheets/HeaderComponent.css';
 import './stylesheets/FooterComponent.css';
-
-
+import './stylesheets/pages/LandingPage.css';
 
 
 import HeaderComponent from './components/headers/HeaderComponent';
