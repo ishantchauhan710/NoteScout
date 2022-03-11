@@ -9,11 +9,16 @@ const AppContext = ({children}) => {
 
     const [loginEmail,setLoginEmail] = useState("");
     const [loginPassword,setLoginPassword] = useState("");
-    const [error,setError] = useState("");
+    const [showMessage,setShowMessage] = useState(false);
+    const [message,setMessage] = useState("");
+    const [snackbarVariant,setSnackbarVariant] = useState("success");
+
+    
     const [loading,setLoading] = useState(false);
 
+
     return (
-        <ContextProvider.Provider value={{openLoginModal,setOpenLoginModal,authTab,setAuthTab,loginEmail,setLoginEmail,loginPassword,setLoginPassword,setError,loading,setLoading}}>
+        <ContextProvider.Provider value={{openLoginModal,setOpenLoginModal,authTab,setAuthTab,loginEmail,setLoginEmail,loginPassword,setLoginPassword,message,setMessage,loading,setLoading,showMessage,setShowMessage,snackbarVariant,setSnackbarVariant}}>
             {children}
         </ContextProvider.Provider>
     )

@@ -7,7 +7,7 @@ import axios from 'axios';
 
 export const LoginSignupTab = () => {
 
-    const {authTab,setAuthTab,loginEmail,setLoginEmail,loginPassword,setLoginPassword,setError,loading,setLoading} = AppState();
+    const {authTab,setAuthTab,loginEmail,setLoginEmail,loginPassword,setLoginPassword,setMessage,loading,setLoading,showMessage,setShowMessage,setSnackbarVariant} = AppState();
 
     const handleChange = (event, newTabValue) => {
       setAuthTab(newTabValue);
@@ -36,8 +36,9 @@ export const LoginSignupTab = () => {
             setLoading(false);
 
         } catch(e) {
-            setError(e.response.data.message);
-            console.log('Error: ',e.response.data.message);
+            setMessage(e.response.data.message);
+            setSnackbarVariant("error");
+            setShowMessage(true);
             setLoading(false);
         }
     }

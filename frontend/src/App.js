@@ -15,12 +15,13 @@ import LandingPage from './pages/LandingPage';
 import NotesHomePage from './pages/NotesHomePage';
 import { AppState } from './AppContext';
 import { LoadingComponent } from './components/dialog/LoadingComponent';
+import SnackbarComponent from './components/dialog/SnackbarComponent';
 
 
 
 function App() {
 
-  const {loading,setLoading} = AppState();
+  const {loading,setLoading,message,setMessage,showMessage,setShowMessage,snackbarVariant,setSnackbarVariant} = AppState();
 
   return (
       <BrowserRouter>
@@ -31,6 +32,8 @@ function App() {
 
 
         {loading===true?(<LoadingComponent />):(<></>)}
+
+        <SnackbarComponent snackbarType={snackbarVariant} snackbarMessage={message} showMessage={showMessage} setShowMessage={setShowMessage} />
         
 
         <FooterComponent />
