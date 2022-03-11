@@ -3,11 +3,19 @@ import { AppState } from '../../AppContext';
 
 const HeaderComponent = () => {
 
-  const {openLoginModal,setOpenLoginModal} = AppState();
+  const {openLoginModal,setOpenLoginModal,setAuthTab} = AppState();
 
-  const toggleModal = () => {
+  const showLoginTab = () => {
+    setAuthTab("1");
     setOpenLoginModal(!openLoginModal);
   }
+
+  const showSignupTab = () => {
+    setAuthTab("2");
+    setOpenLoginModal(!openLoginModal);
+  }
+
+  
 
   return (
     <div className='container-header'>
@@ -23,8 +31,8 @@ const HeaderComponent = () => {
       </div>
 
       <div>
-        <button onClick={toggleModal} className='btn-nav btn-secondary'>Login</button>
-        <button onClick={toggleModal} className='btn-nav btn-primary'>Sign up</button>
+        <button onClick={showLoginTab} className='btn-nav btn-secondary'>Login</button>
+        <button onClick={showSignupTab} className='btn-nav btn-primary'>Sign up</button>
       </div>
       
       

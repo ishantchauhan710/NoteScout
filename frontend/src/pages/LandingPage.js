@@ -3,9 +3,19 @@ import Lottie from 'lottie-react';
 import noteAnimation from '../assets/noteanimation.json';
 import LoginSignupComponent from '../components/dialog/LoginSignupComponent';
 import { Modal } from '@material-ui/core';
-import AppContext from '../AppContext';
+import AppContext, { AppState } from '../AppContext';
 
 const LandingPage = () => {
+
+
+  const {openLoginModal,setOpenLoginModal,setAuthTab} = AppState();
+
+
+  const showLoginTab = () => {
+    setAuthTab("1");
+    setOpenLoginModal(!openLoginModal);
+  }
+
 
 
 
@@ -23,7 +33,7 @@ const LandingPage = () => {
         </span>
 
        
-        <button className='btn-getstarted-landing-page'>Get Started</button>
+        <button onClick={showLoginTab} className='btn-getstarted-landing-page'>Get Started</button>
 
         <span className='txt-landing-page-subtitle'>Why choose NoteScout?</span>
 

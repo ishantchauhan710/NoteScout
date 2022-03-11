@@ -2,18 +2,19 @@ import { Box, Button, Tab, Tabs, TextField, ThemeProvider} from '@material-ui/co
 import {TabContext, TabList, TabPanel} from '@material-ui/lab';
 import { appTheme } from '../../styles/theme';
 import React from 'react'
+import { AppState } from '../../AppContext';
 
 export const LoginSignupTab = () => {
 
-    const [value, setValue] = React.useState('1');
+    const {authTab,setAuthTab} = AppState();
 
-    const handleChange = (event, newValue) => {
-      setValue(newValue);
+    const handleChange = (event, newTabValue) => {
+      setAuthTab(newTabValue);
     };
 
   return (
       <ThemeProvider theme={appTheme}>
-        <TabContext value={value}>
+        <TabContext value={authTab}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
             <TabList TabIndicatorProps={{style: {background:'#ff4848'}}}variant="fullWidth" onChange={handleChange}>
                 <Tab label="Login" value="1" />
