@@ -33,6 +33,7 @@ app.use('/api/auth',authRoutes);
 
 
 
+
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
