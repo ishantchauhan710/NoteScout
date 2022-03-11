@@ -12,7 +12,7 @@ body {
 }
 
 .container-landing-page {
-    height: calc(100vh - 70px);
+    min-height: calc(100vh - (70px + 3rem));
     display: flex;
 }
 
@@ -32,6 +32,15 @@ body {
     margin-top: 20px;
     color: var(--colorContentDark);
 }
+
+.txt-landing-page-subtitle {
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-top: 60px;
+    color: var(--colorContentDark);
+}
+
+
 
 .txt-landing-page-description {
     font-size: 1.1rem;
@@ -58,4 +67,42 @@ body {
 
 .btn-getstarted-landing-page:hover {
     background-color: var(--colorSecondaryHover);
+}
+
+.list-features li {
+	font-size: 16px;
+	margin-bottom: 1em;
+	list-style-type: none;
+	padding: .25em 0 0 2.5em;
+	position: relative;
+}
+
+.list-features li:before {
+		content: " ";
+		display: block;
+		border: solid .8em var(--colorPrimary);
+		border-radius: .8em;
+		height: 0;
+		width: 0;
+		position: absolute;
+		left: .5em;
+		top: 40%;
+		margin-top: -.5em;
+}
+
+.list-features li:after {
+		content: " ";
+		display: block;
+		width: .3em;
+		height: .6em;
+		border: solid #fff;
+		border-width: 0 .2em .2em 0;
+		position: absolute;
+		left: 1em;
+		top: 40%;
+		margin-top: -.2em;
+		-webkit-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		-o-transform: rotate(45deg);
+		transform: rotate(45deg);
 }

@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Lottie from 'lottie-react';
 import noteAnimation from '../assets/noteanimation.json';
+import { LoginSignupComponent } from '../components/dialog/LoginSignupComponent';
+import { Modal } from '@material-ui/core';
 
 const LandingPage = () => {
+
+    const [toggleModal,setToggleModal] = useState(false);
+
+
   return (
     <div className='container-landing-page'>
 
@@ -18,7 +24,18 @@ const LandingPage = () => {
 
        
         <button className='btn-getstarted-landing-page'>Get Started</button>
-    
+
+        <span className='txt-landing-page-subtitle'>Why choose NoteScout?</span>
+
+        <ul className='list-features'>
+            <li>Easily organize your notes</li>
+            <li>Export them in PDF format</li>
+            <li>Share them with your friends and collegues</li>
+            <li>Store them securely on this website</li>
+        </ul>
+        
+        
+
             
         </div>
 
@@ -26,7 +43,7 @@ const LandingPage = () => {
             <Lottie animationData={noteAnimation} loop={true} autoplay={true} style={{height: 700}}></Lottie>
         </div>
 
-
+    
         
     </div>
   )

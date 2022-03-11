@@ -1,6 +1,9 @@
 import './App.css';
 import './stylesheets/Variables.css';
 import './stylesheets/HeaderComponent.css';
+import './stylesheets/FooterComponent.css';
+
+
 
 
 import HeaderComponent from './components/headers/HeaderComponent';
@@ -13,6 +16,7 @@ function App() {
     <div className="App">
       <HeaderComponent />
       <LandingPage />
+      <FooterComponent />
     </div>
   );
 }
