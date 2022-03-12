@@ -39,6 +39,7 @@ export const LoginSignupTab = () => {
             setMessage(e.response.data.message);
             setSnackbarVariant("error");
             setShowMessage(true);
+            console.log(loading);
             setLoading(false);
         }
     }
