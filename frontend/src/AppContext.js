@@ -9,6 +9,17 @@ const AppContext = ({children}) => {
 
     const [loginEmail,setLoginEmail] = useState("");
     const [loginPassword,setLoginPassword] = useState("");
+
+    const [registerUsername,setRegisterUsername] = useState("");
+    const [registerEmail,setRegisterEmail] = useState("");
+    const [registerPassword,setRegisterPassword] = useState("");
+    const [registerConfirmPassword,setRegisterConfirmPassword] = useState("");
+    const [registerProfilePicture,setRegisterProfilePicture] = useState("");
+
+    
+    
+
+
     const [showMessage,setShowMessage] = useState(false);
     const [message,setMessage] = useState("");
     const [snackbarVariant,setSnackbarVariant] = useState("success");
@@ -18,7 +29,10 @@ const AppContext = ({children}) => {
 
 
     return (
-        <ContextProvider.Provider value={{openLoginModal,setOpenLoginModal,authTab,setAuthTab,loginEmail,setLoginEmail,loginPassword,setLoginPassword,message,setMessage,loading,setLoading,showMessage,setShowMessage,snackbarVariant,setSnackbarVariant}}>
+        <ContextProvider.Provider value={
+            {openLoginModal,setOpenLoginModal,authTab,setAuthTab,loginEmail,setLoginEmail,loginPassword,setLoginPassword,message,setMessage,loading,setLoading,showMessage,setShowMessage,snackbarVariant,setSnackbarVariant,
+                registerUsername,setRegisterUsername,registerEmail,setRegisterEmail,registerPassword,setRegisterPassword,registerConfirmPassword,setRegisterConfirmPassword,registerProfilePicture,setRegisterProfilePicture,
+        }}>
             {children}
         </ContextProvider.Provider>
     )
