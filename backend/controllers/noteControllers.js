@@ -57,6 +57,25 @@ const updateNote = asyncHandler(async(req,res) => {
         throw new Error("Note not found");
     }
 
+});
+
+const deleteNote = asyncHandler(async(req,res) => {
+    const note = await Note.findById(req.params.id);
+    if(note) {
+
+        if(note.noteOwner.toString()!==req.user._id.toString()) {
+            res.status(401);
+            throw new Error("Permission denied");
+        } else {
+            await note.remove();
+            res.status(200).json({message: "Note deleted successfully"});
+        }
+
+    } else {
+        res.status(404);
+        throw new Error("Note not found");
+    }
+
 })
 
-module.exports = {getNotes, createNote,getNoteById,updateNote};
+module.exports = {getNotes, createNote,getNoteById,updateNote,deleteNote};
