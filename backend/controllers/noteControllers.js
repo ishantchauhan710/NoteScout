@@ -33,6 +33,30 @@ const getNoteById = asyncHandler(async(req,res) => {
     } else {
         res.status(404).json({message: "Note not found"});
     }
+});
+
+const updateNote = asyncHandler(async(req,res) => {
+    const {noteTitle,noteContent,noteCategory} = req.body;
+    const note = await Note.findById(req.params.id);
+
+    if(note) {
+
+        if(note.noteOwner.toString()!==req.user._id.toString()) {
+            res.status(401);
+            throw new Error("Permission denied");
+        } else {
+            note.noteTitle = noteTitle
+            note.noteContent = noteContent
+            note.noteCategory = noteCategory
+            const updatedNote = await note.save();
+            res.status(200).json(updatedNote);
+        }
+
+    } else {
+        res.status(404);
+        throw new Error("Note not found");
+    }
+
 })
 
-module.exports = {getNotes, createNote,getNoteById};
+module.exports = {getNotes, createNote,getNoteById,updateNote};
