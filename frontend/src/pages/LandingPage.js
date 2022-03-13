@@ -1,13 +1,20 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Lottie from 'lottie-react';
 import noteAnimation from '../assets/noteanimation.json';
 import LoginSignupComponent from '../components/dialog/LoginSignupComponent';
 import { AppState } from '../AppContext';
+import {useHistory} from 'react-router-dom';
 
 const LandingPage = () => {
 
-
   const {openLoginModal,setOpenLoginModal,setAuthTab} = AppState();
+
+  const userInfoFromStorage = localStorage.getItem("userDetails")?JSON.parse(localStorage.getItem("userDetails")): null;
+  const history = useHistory();
+  useEffect(() => {
+      if(userInfoFromStorage) {
+          history.push('/notes');
+        }},[]);
 
 
   const showLoginTab = () => {
