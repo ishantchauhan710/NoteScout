@@ -49,6 +49,7 @@ const updateNote = asyncHandler(async(req,res) => {
             note.noteContent = noteContent
             note.noteCategory = noteCategory
             const updatedNote = await note.save();
+            console.log('Success');
             res.status(200).json(updatedNote);
         }
 
