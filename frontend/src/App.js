@@ -19,6 +19,7 @@ import { AppState } from './AppContext';
 import { LoadingComponent } from './components/dialog/LoadingComponent';
 import SnackbarComponent from './components/dialog/SnackbarComponent';
 import CreateNotePage from './pages/CreateNotePage';
+import EditNotePage from './pages/EditNotePage';
 
 
 
@@ -33,6 +34,8 @@ function App() {
         <Route path='/' component={LandingPage} exact />
         <Route path='/notes' component={NotesHomePage} exact />
         <Route path='/createnote' component={CreateNotePage} exact />
+        <Route path='/editnote/:id' component={EditNotePage} exact />
+        
         
 
 

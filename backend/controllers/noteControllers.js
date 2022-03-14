@@ -36,7 +36,7 @@ const getNoteById = asyncHandler(async(req,res) => {
 });
 
 const updateNote = asyncHandler(async(req,res) => {
-    const {noteTitle,noteContent,noteCategory} = req.body;
+    const {noteTitle,noteContent,noteCategory,noteImageURL} = req.body;
     const note = await Note.findById(req.params.id);
 
     if(note) {
@@ -48,6 +48,7 @@ const updateNote = asyncHandler(async(req,res) => {
             note.noteTitle = noteTitle
             note.noteContent = noteContent
             note.noteCategory = noteCategory
+            note.noteImageURL = noteImageURL
             const updatedNote = await note.save();
             console.log('Success');
             res.status(200).json(updatedNote);

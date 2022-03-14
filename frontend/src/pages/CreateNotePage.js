@@ -1,6 +1,6 @@
 import { Button, TextField } from '@material-ui/core'
 import axios, { Axios } from 'axios';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { AppState } from '../AppContext';
 import NoteMarkdownComponent from '../components/dialog/NoteMarkdownComponent';
 import {useHistory} from 'react-router-dom';
@@ -20,6 +20,13 @@ const CreateNotePage = () => {
       setMessage(msg);
       setShowMessage(true);
     }
+
+    useEffect(() => {
+      if(!userInfoFromStorage) {
+          history.push('/');
+        }},[]);
+
+
 
 
     const showNoteMarkdownModal = () => {

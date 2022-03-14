@@ -6,8 +6,9 @@ const router = express.Router();
 router.route('/').get(authMiddleware,getNotes);
 router.route('/createNote').post(authMiddleware,createNote);
 
-router.route("/:id").get(authMiddleware,getNoteById)
-router.route("/:id").put(authMiddleware,updateNote);
+router.route("/editnote/:id").get(authMiddleware,getNoteById);
+
+router.route("/updatenote/:id").post(authMiddleware,updateNote);
 router.route("/:id").delete(authMiddleware,deleteNote);
 
 

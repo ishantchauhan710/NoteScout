@@ -3,6 +3,7 @@
     width: 20%;
     display: flex;
     margin: 20px;
+    position: relative;
     flex-direction: column;
     border: 2px solid var(--colorBorderLight);
     border-radius: 10px;
@@ -55,6 +56,30 @@
     font-weight: 400;
     margin: 10px 10px 10px 10px;
     color: var(--colorContentDarkTertiary);
+}
+
+.btn-note-controls {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    background-color: var(--colorSecondary);
+    border-color: var(--colorSecondary);
+    border-radius: 50%;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+}
+
+.btn-note-controls:hover {
+    background-color: var(--colorPrimary);
+    border-color: var(--colorPrimary);
+}
+
+.btn-note-controls i {
+    font-size: 1.5rem;
+    color: #ffffff;
 }
 
 @media(max-width:800px) {
