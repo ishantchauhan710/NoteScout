@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import NoteComponent from '../components/cards/NoteComponent'
 import axios from 'axios'
 import {useHistory} from 'react-router-dom';
+import { AppState } from '../AppContext';
 
 const NotesHomePage = () => {
 
@@ -14,15 +15,31 @@ const NotesHomePage = () => {
             history.push('/');
           }},[]);
 
+    const {setMessage,loading,setLoading,showMessage,setShowMessage,setSnackbarVariant} = AppState();
+
+    const showError = (msg) => {
+      setSnackbarVariant("error");
+      setMessage(msg);
+      setShowMessage(true);
+    }
+
+      
+
     const fetchNotes = async () => {
 
         try {
-            const {data} = await axios.get('/api/notes');
+            const config = {
+                headers: {
+                    Authorization: `Bearer ${userInfoFromStorage.token}`
+                }
+            }
+            const {data} = await axios.get('/api/notes',config);
             console.log('Notes API: ',data);
             setNotes(data); 
             
-        } catch(e) {
-            console.log(e.message);
+        } catch(error) {
+            const message = error.response && error.response.data.message?error.response.data.message:error.message;
+            showError(message);
         }
         
     }
