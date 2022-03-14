@@ -86,6 +86,34 @@ const EditNotePage = () => {
           setLoading(false);
         }
     }
+
+    const deleteNote = async () => {
+
+      if (window.confirm("Are you sure you want to delete this note?") === true) {
+        try {
+          setLoading(true);
+          const config = {
+            headers: {
+              "Content-type": "application/json",
+              Authorization: `Bearer ${userInfoFromStorage.token}`
+            }
+          }
+  
+          const {data} = await axios.post(`/api/notes/deletenote/${editNoteId}`,{},config);
+  
+          setLoading(false);
+          history.push('/notes');
+  
+        } catch(error) {
+          setLoading(true);
+          const message = error.response && error.response.data.message?error.response.data.message:error.message;
+          showError(message);
+          setLoading(false);
+        }
+      } else {
+        /* No Operation */
+      }
+    }
     
     useEffect(() => {
 
@@ -106,7 +134,9 @@ const EditNotePage = () => {
         <TextField value={noteImageURL} onChange={(e) => setNoteImageURL(e.target.value)} style={{width: "100%", marginBottom: 10}} id="outlined-basic" label="Note Image URL (Optional)" variant="outlined" />
     
         <Button onClick={(e) => updateNote(e)} color="primary" variant="contained" style={{marginTop: 10, width: "100%"}}>Update Note</Button>
+        <Button onClick={(e) => deleteNote()} variant="contained" style={{marginTop: 10, width: "100%"}}>Delete Note</Button>
     
+
         <NoteMarkdownComponent />
 
     </div>
