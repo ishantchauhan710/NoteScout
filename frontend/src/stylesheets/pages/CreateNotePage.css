@@ -26,6 +26,8 @@
     background-color: #ffffff;
     color: #111111;
     border-radius: 50%;
+    border-color: var(--colorTransparent);
+    outline: 0;
     width: 2.5rem;
     height: 2.5rem;
     margin-top: 10px;

@@ -20,7 +20,7 @@ const AppContext = ({children}) => {
     const [message,setMessage] = useState("");
     const [snackbarVariant,setSnackbarVariant] = useState("success");
 
-    const [openNoteMarkdownModal,setOpenNoteMarkdownModal] = useState(true);
+    const [openNoteMarkdownModal,setOpenNoteMarkdownModal] = useState(false);
 
 
     const [noteContent,setNoteContent] = useState("");

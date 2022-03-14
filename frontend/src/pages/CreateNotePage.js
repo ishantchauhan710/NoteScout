@@ -25,7 +25,7 @@ const CreateNotePage = () => {
        
         <Button onClick={showNoteMarkdownModal} type='submit' color="primary" variant="contained" style={{marginBottom: 10, alignSelf: "flex-end"}}>Show Markdown</Button>
         <TextField onChange={(e) => setNoteCategory(e.target.value)} style={{width: "100%", marginBottom: 10}} id="outlined-basic" label="Note Category" variant="outlined" />
-        <TextField onChange={(e) => setNoteImage(e.target.value)} style={{width: "100%", marginBottom: 10}} id="outlined-basic" label="Note Image (Optional)" variant="outlined" />
+        <TextField onChange={(e) => setNoteImage(e.target.value)} style={{width: "100%", marginBottom: 10}} id="outlined-basic" label="Note Image URL (Optional)" variant="outlined" />
     
         <Button type='submit' color="primary" variant="contained" style={{marginTop: 10, width: "100%"}}>Create Note</Button>
     
