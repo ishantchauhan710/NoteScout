@@ -19,7 +19,7 @@ const noteSchema = mongoose.Schema(
             required: true,
             ref: "User"
         },
-        noteImageLink: {
+        noteImageURL: {
             type: String,
             required: true
         }

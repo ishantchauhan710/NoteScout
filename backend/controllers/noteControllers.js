@@ -9,7 +9,7 @@ const getNotes = asyncHandler(
 );
 
 const createNote = asyncHandler(async(req,res) => {
-    const {noteTitle,noteContent,noteCategory,noteImageLink} = req.body;
+    const {noteTitle,noteContent,noteCategory,noteImageURL} = req.body;
     if(!noteTitle) {
         res.status(400);
         throw new Error("You must provide a title for your note");
@@ -20,7 +20,7 @@ const createNote = asyncHandler(async(req,res) => {
         res.status(400);
         throw new Error("You must provide a category for your note");
     } else {
-        const note = new Note({noteOwner: req.user._id,noteTitle: noteTitle,noteContent: noteContent, noteCategory: noteCategory,noteImageLink: noteImageLink});
+        const note = new Note({noteOwner: req.user._id,noteTitle: noteTitle,noteContent: noteContent, noteCategory: noteCategory,noteImageURL: noteImageURL});
         const createdNote = await note.save();
         res.status(201).json(createdNote);
     }
