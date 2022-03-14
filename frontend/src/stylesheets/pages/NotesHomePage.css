@@ -18,3 +18,11 @@
     align-items: flex-end;
     justify-content: center;
 }
+
+@media(max-width:800px) {
+    .container-notes {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+}

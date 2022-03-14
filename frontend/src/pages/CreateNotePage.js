@@ -3,6 +3,7 @@ import axios, { Axios } from 'axios';
 import React, { useState } from 'react'
 import { AppState } from '../AppContext';
 import NoteMarkdownComponent from '../components/dialog/NoteMarkdownComponent';
+import {useHistory} from 'react-router-dom';
 
 const CreateNotePage = () => {
 
@@ -25,9 +26,12 @@ const CreateNotePage = () => {
         setOpenNoteMarkdownModal(!openNoteMarkdownModal);
       }
 
+    const history = useHistory();
+
     const createNote = async (e) => {
         e.preventDefault();
         try {
+          setLoading(true);
           const config = {
             headers: {
               "Content-type": "application/json",
@@ -42,11 +46,14 @@ const CreateNotePage = () => {
             noteImageURL: noteImageURL
           },config);
 
-          showError("Success");
+          setLoading(false);
+          history.push('/notes');
 
         } catch(error) {
+          setLoading(true);
           const message = error.response && error.response.data.message?error.response.data.message:error.message;
           showError(message);
+          setLoading(false);
         }
     }
     

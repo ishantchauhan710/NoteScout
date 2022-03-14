@@ -57,7 +57,13 @@
     color: var(--colorContentDarkTertiary);
 }
 
-
+@media(max-width:800px) {
+    .note {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}
 
 
 

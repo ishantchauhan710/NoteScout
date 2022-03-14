@@ -23,8 +23,6 @@ const NotesHomePage = () => {
       setShowMessage(true);
     }
 
-      
-
     const fetchNotes = async () => {
 
         try {
@@ -55,13 +53,13 @@ const NotesHomePage = () => {
   return (
     <div className='container-notes-home-page'>
        <div className='container-notes-data'>
-            27 notes
+            {notes.length} notes
         </div>
 
         <div className='container-notes'>
            {
                (notes.map((note) => (
-                <NoteComponent key={note._id} noteTitle={note.noteTitle} noteContent={note.noteContent} noteCategory={note.noteCategory} />
+                <NoteComponent key={note._id} noteTitle={note.noteTitle} noteContent={note.noteContent} noteCategory={note.noteCategory} noteImageURL={note.noteImageURL} />
            )))
            }
         </div>

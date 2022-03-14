@@ -1,9 +1,18 @@
 import React from 'react'
 
-const NoteComponent = ({noteId,noteTitle,noteContent,noteCategory,noteTime}) => {
+const NoteComponent = ({noteId,noteTitle,noteContent,noteCategory,noteImageURL,noteTime}) => {
+  
+  const isValidImageURL = (imgUrl) => {
+    if (typeof imgUrl !== 'string') {
+      return false;
+    }
+    return (imgUrl.match(/^http[^\?]*.(jpg|jpeg|gif|png|tiff|bmp)(\?(.*))?$/gmi) !== null);
+  }
+  
+
   return (
     <div className='note'>
-        <img className='note-image' src='https://cdn.pixabay.com/photo/2017/06/05/07/58/butterfly-2373175__340.png' />
+        <img className='note-image' src={isValidImageURL(noteImageURL)?noteImageURL:'https://homestaymatch.com/images/no-image-available.png'} />
         <span className='note-title'>{noteTitle}</span>
         <span className='note-content'>{noteContent}</span>
         <span className='note-category'>{noteCategory}</span>
