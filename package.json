@@ -19,6 +19,7 @@
     "express": "^4.17.3",
     "express-async-handler": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.2.5"
+    "mongoose": "^6.2.5",
+    "react-markdown": "^8.0.1"
   }
 }

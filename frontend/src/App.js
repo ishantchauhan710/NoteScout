@@ -6,6 +6,8 @@ import './stylesheets/DialogComponent.css';
 import './stylesheets/CardComponent.css';
 import './stylesheets/pages/LandingPage.css';
 import './stylesheets/pages/NotesHomePage.css';
+import './stylesheets/pages/CreateNotePage.css';
+
 
 
 import {BrowserRouter, Route} from 'react-router-dom';
@@ -16,6 +18,7 @@ import NotesHomePage from './pages/NotesHomePage';
 import { AppState } from './AppContext';
 import { LoadingComponent } from './components/dialog/LoadingComponent';
 import SnackbarComponent from './components/dialog/SnackbarComponent';
+import CreateNotePage from './pages/CreateNotePage';
 
 
 
@@ -29,6 +32,8 @@ function App() {
 
         <Route path='/' component={LandingPage} exact />
         <Route path='/notes' component={NotesHomePage} exact />
+        <Route path='/createnote' component={CreateNotePage} exact />
+        
 
 
         {loading===true?(<LoadingComponent />):(<></>)}

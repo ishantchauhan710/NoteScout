@@ -1,0 +1,46 @@
+.container-create-note {
+    min-height: calc(100vh - (70px + 3rem));
+    display: flex;
+    padding: 5vh 5vw;
+    flex-direction: column;
+}
+
+.container-btn-notemarkdown {
+    display: flex;
+    height: 3.5rem;
+    background-color: var(--colorSecondary);
+    align-items: center;
+    justify-content: center;
+    box-shadow: 4px 2px 12px rgba(0,0,0,0.46);
+}
+
+.txt-note-markdown-caption {
+    flex: 1;
+    margin-left: 10px;
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.btn-close-note-markdown-modal {
+    background-color: #ffffff;
+    color: #111111;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 0.5rem;
+}
+
+.btn-close-note-markdown-modal:hover {
+    background-color: var(--colorPrimary);
+    border-color: var(--colorPrimary);
+    color: #ffffff;
+}
+
+.container-notemarkdown {
+    padding: 10px;
+    height: calc(100vh - 50px);
+    overflow: scroll;
+}

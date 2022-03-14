@@ -16,13 +16,14 @@ const AppContext = ({children}) => {
     const [registerConfirmPassword,setRegisterConfirmPassword] = useState("");
     const [registerProfilePicture,setRegisterProfilePicture] = useState("");
 
-    
-    
-
-
     const [showMessage,setShowMessage] = useState(false);
     const [message,setMessage] = useState("");
     const [snackbarVariant,setSnackbarVariant] = useState("success");
+
+    const [openNoteMarkdownModal,setOpenNoteMarkdownModal] = useState(true);
+
+
+    const [noteContent,setNoteContent] = useState("");
 
     
     const [loading,setLoading] = useState(false);
@@ -32,6 +33,7 @@ const AppContext = ({children}) => {
         <ContextProvider.Provider value={
             {openLoginModal,setOpenLoginModal,authTab,setAuthTab,loginEmail,setLoginEmail,loginPassword,setLoginPassword,message,setMessage,loading,setLoading,showMessage,setShowMessage,snackbarVariant,setSnackbarVariant,
                 registerUsername,setRegisterUsername,registerEmail,setRegisterEmail,registerPassword,setRegisterPassword,registerConfirmPassword,setRegisterConfirmPassword,registerProfilePicture,setRegisterProfilePicture,
+                openNoteMarkdownModal,setOpenNoteMarkdownModal,noteContent,setNoteContent
         }}>
             {children}
         </ContextProvider.Provider>

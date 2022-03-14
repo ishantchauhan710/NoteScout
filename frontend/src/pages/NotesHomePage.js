@@ -28,6 +28,7 @@ const NotesHomePage = () => {
     const fetchNotes = async () => {
 
         try {
+            setLoading(true);
             const config = {
                 headers: {
                     Authorization: `Bearer ${userInfoFromStorage.token}`
@@ -36,10 +37,12 @@ const NotesHomePage = () => {
             const {data} = await axios.get('/api/notes',config);
             console.log('Notes API: ',data);
             setNotes(data); 
-            
+            setLoading(false);
         } catch(error) {
+            setLoading(true);
             const message = error.response && error.response.data.message?error.response.data.message:error.message;
             showError(message);
+            setLoading(false);
         }
         
     }
