@@ -60,9 +60,13 @@ const NotesHomePage = () => {
         <div className='container-notes'>
            {
                (notes.map((note) => (
-                <NoteComponent key={note._id} noteId={note._id} noteTitle={note.noteTitle} noteContent={note.noteContent} noteCategory={note.noteCategory} noteImageURL={note.noteImageURL} />
+                <NoteComponent key={note._id} noteId={note._id} noteTitle={note.noteTitle} noteContent={note.noteContent} noteCategory={note.noteCategory} noteImageURL={note.noteImageURL} noteTime={note.createdAt} />
            )))
            }
+        </div>
+
+        <div className='btn-create-note'>
+            +
         </div>
 
     </div>

@@ -78,8 +78,8 @@
 }
 
 .btn-note-controls:hover {
-    background-color: var(--colorPrimary);
-    border-color: var(--colorPrimary);
+    background-color: var(--colorSecondaryHover);
+    border-color: var(--colorSecondaryHover);
 }
 
 .btn-note-controls i {

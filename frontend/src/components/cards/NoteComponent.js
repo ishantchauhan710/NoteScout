@@ -37,7 +37,7 @@ const NoteComponent = ({noteId,noteTitle,noteContent,noteCategory,noteImageURL,n
           <span className='note-title'>{noteTitle}</span>
           <span className='note-content'>{noteContent}</span>
           <span className='note-category'>{noteCategory}</span>
-          <span className='note-date'>7 Oct 2001, 12:00 am</span>
+          <span className='note-date'>{noteTime}</span>
         </div>
         <button onClick={editNote} className='btn-note-controls'><i className="material-icons">edit</i></button>
 
