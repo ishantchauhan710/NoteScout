@@ -24,13 +24,13 @@ app.use("/api/notes",noteRoutes);
 
 __dirname = path.resolve();
 if(process.env.NODE_ENV==='production') {
-    console.log("Server running in production mode");
+    console.log("Server running in production mode!");
     app.use(express.static(path.join(__dirname,'/frontend/build')));
     app.get('*',(req,res)=>{
         res.sendFile(path.resolve(__dirname,'frontend','build','index.html'));
     })
 } else {
-    console.log("Server running in development mode");
+    console.log("Server running in development mode!");
 }
 
 
