@@ -35,7 +35,7 @@ const LandingPage = () => {
         </span>
 
         <span className='txt-landing-page-description'>
-            Whether you want to write a journal or you want to store your passwords, NoteScout can be an excellent choice for you! Built using the power of express js, this website provides a really strong encryption mechanism to securely store your notes.
+            Whether you want to write a journal or you want to store your passwords, NoteScout can be an excellent choice for you! Built using the power of express js, this website provides a really simple data storing mechanism to securely store your notes.
         </span>
 
        

@@ -53,9 +53,9 @@ const HeaderComponent = () => {
       </div>
 
       <div>
-        <a className='nav-link' href="#">Home</a>
-        <a className='nav-link' href="#">About</a>
-        <a className='nav-link' href="#">Contact</a>
+        <a className='nav-link' href="https://github.com/ishantchauhan710/" target="_new">Home</a>
+        <a className='nav-link' href="https://github.com/ishantchauhan710/NoteScout" target="_new">About</a>
+        <a className='nav-link' href="https://www.instagram.com/theishantchauhan/" target="_new">Contact</a>
       </div>
 
       <div>
