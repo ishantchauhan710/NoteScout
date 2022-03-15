@@ -35,8 +35,8 @@ const NotesHomePage = () => {
                 }
             }
             const {data} = await axios.get('/api/notes',config);
-            console.log('Notes API: ',data);
-            setNotes(data); 
+            //console.log('Notes API: ',data);
+            setNotes(data.reverse()); 
             setLoading(false);
         } catch(error) {
             setLoading(true);
@@ -71,7 +71,7 @@ const NotesHomePage = () => {
 
         <div className='container-notes'>
            {
-               (notes.map((note) => (
+               (notes.reverse().map((note) => (
                 <NoteComponent key={note._id} noteId={note._id} noteTitle={note.noteTitle} noteContent={note.noteContent} noteCategory={note.noteCategory} noteImageURL={note.noteImageURL} noteTime={note.createdAt && formatDateString(note.createdAt)} />
            )))
            }
