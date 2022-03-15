@@ -15,7 +15,9 @@ const NotesHomePage = () => {
             history.push('/');
           }},[]);
 
-    const {setMessage,loading,setLoading,showMessage,setShowMessage,setSnackbarVariant} = AppState();
+    const {setMessage,loading,setLoading,showMessage,setShowMessage,setSnackbarVariant,setOpenNoteMarkdownModal} = AppState();
+
+    setOpenNoteMarkdownModal(false);
 
     const showError = (msg) => {
       setSnackbarVariant("error");
@@ -50,6 +52,16 @@ const NotesHomePage = () => {
         fetchNotes();
     },[]);
 
+    const createNote = () => {
+        history.push('/createnote');
+    }
+
+    const formatDateString = (date) => {
+        let dateStr = date.substring(0,10);
+        let timeStr = date.substring(11,16);
+        return `${dateStr}, ${timeStr}`;
+    }
+
 
   return (
     <div className='container-notes-home-page'>
@@ -60,12 +72,12 @@ const NotesHomePage = () => {
         <div className='container-notes'>
            {
                (notes.map((note) => (
-                <NoteComponent key={note._id} noteId={note._id} noteTitle={note.noteTitle} noteContent={note.noteContent} noteCategory={note.noteCategory} noteImageURL={note.noteImageURL} noteTime={note.createdAt} />
+                <NoteComponent key={note._id} noteId={note._id} noteTitle={note.noteTitle} noteContent={note.noteContent} noteCategory={note.noteCategory} noteImageURL={note.noteImageURL} noteTime={note.createdAt && formatDateString(note.createdAt)} />
            )))
            }
         </div>
 
-        <div className='btn-create-note'>
+        <div onClick={createNote} className='btn-create-note'>
             +
         </div>
 
