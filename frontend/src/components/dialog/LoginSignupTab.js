@@ -4,6 +4,7 @@ import {TabContext, TabList, TabPanel} from '@material-ui/lab';
 import { appTheme } from '../../styles/theme';
 import { AppState } from '../../AppContext';
 import axios from 'axios';
+import {useHistory} from 'react-router-dom';
 
 export const LoginSignupTab = () => {
 
@@ -12,6 +13,8 @@ export const LoginSignupTab = () => {
     const handleChange = (event, newTabValue) => {
       setAuthTab(newTabValue);
     };
+
+    const history = useHistory();
 
     const showError = (msg) => {
       setSnackbarVariant("error");
@@ -64,6 +67,7 @@ export const LoginSignupTab = () => {
             console.log('API Response:', data);
             localStorage.setItem('userDetails',JSON.stringify(data));
             setLoading(false);
+            history.push("/notes");
 
         } catch(e) {
             setMessage(e.response.data.message);
@@ -91,7 +95,7 @@ export const LoginSignupTab = () => {
           console.log('API Response:', data);
           localStorage.setItem('userDetails',JSON.stringify(data));
           setLoading(false);
-          showError("SUCCESS!");
+          history.push("/notes");
         } catch(e) {
           setMessage(e.response.data.message);
           setSnackbarVariant("error");
