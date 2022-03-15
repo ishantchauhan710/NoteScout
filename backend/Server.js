@@ -23,6 +23,8 @@ app.use('/api/auth',authRoutes);
 app.use("/api/notes",noteRoutes);
 
 console.log("Server running");
+console.log("Server running 2");
+
 
 
 
