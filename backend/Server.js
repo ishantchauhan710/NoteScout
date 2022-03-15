@@ -22,6 +22,8 @@ app.use('/api/auth',authRoutes);
 
 app.use("/api/notes",noteRoutes);
 
+console.log("Server running");
+
 
 
 app.use(notFoundMiddleware);
