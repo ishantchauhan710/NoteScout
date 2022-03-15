@@ -1,0 +1,36 @@
+.container-profile-page {
+    min-height: calc(100vh - (70px + 3rem));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 2vw;
+}
+
+.img-profile-picture {
+    width: 10%;
+    height: 10%;
+    border-radius: 50%;
+}
+
+.table-profile-data {
+    width: 50%;
+    margin-top: 10px;
+}
+
+.table-profile-data td {
+    border: 1px solid rgba(0,0,0,0.2);
+    padding: 10px;
+}
+
+@media(max-width: 500px) {
+    .img-profile-picture {
+        width: 30%;
+        height: 30%;
+        border-radius: 50%;
+    }
+    .table-profile-data {
+        width: 100%;
+        margin-top: 10px;
+    }    
+}

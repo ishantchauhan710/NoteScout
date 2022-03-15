@@ -61,6 +61,19 @@
     color: var(--colorSecondary);
 }
 
+.btn-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-profile img {
+    width: 2.7rem;
+    height: 2.7rem;
+    margin: 0 15px 0 15px;
+    cursor: pointer;
+}
+
 @media(max-width: 700px) {
     .container-logo {
         margin-top: 4px;

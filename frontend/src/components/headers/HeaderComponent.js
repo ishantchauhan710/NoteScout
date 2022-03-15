@@ -37,6 +37,10 @@ const HeaderComponent = () => {
     setIsUserLoggedIn(false);
     history.push("/");
   }
+
+  const showProfile = () => {
+    history.push('/profile');
+  }
   
 
   
@@ -63,7 +67,12 @@ const HeaderComponent = () => {
           )}
 
           {isUserLoggedIn && (
-            <button onClick={logoutUser} className='btn-nav btn-primary'>Logout</button>
+            <>
+            <div className='btn-profile'>
+              <img onClick={showProfile} src={userInfoFromStorage.userProfilePicture} />
+              <button onClick={logoutUser} className='btn-nav btn-primary'>Logout</button>
+            </div>
+            </>
         )} 
       </div>
       
