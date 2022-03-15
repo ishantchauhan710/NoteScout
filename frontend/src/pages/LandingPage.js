@@ -44,9 +44,9 @@ const LandingPage = () => {
         <span className='txt-landing-page-subtitle'>Why choose NoteScout?</span>
 
         <ul className='list-features'>
-            <li>Easily organize your notes</li>
-            <li>Export them in PDF format</li>
-            <li>Share them with your friends and collegues</li>
+            <li>Signup for free</li>
+            <li>Create and Modify your Notes</li>
+            <li>Use Markdown for formatting your notes</li>
             <li>Store them securely on this website</li>
         </ul>
         
