@@ -45,6 +45,7 @@ const NotesHomePage = () => {
         
     }
 
+
     useEffect(() => {
         fetchNotes();
     },[]);

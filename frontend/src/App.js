@@ -7,6 +7,8 @@ import './stylesheets/CardComponent.css';
 import './stylesheets/pages/LandingPage.css';
 import './stylesheets/pages/NotesHomePage.css';
 import './stylesheets/pages/CreateNotePage.css';
+import './stylesheets/pages/NotePage.css';
+
 
 
 
@@ -20,6 +22,8 @@ import { LoadingComponent } from './components/dialog/LoadingComponent';
 import SnackbarComponent from './components/dialog/SnackbarComponent';
 import CreateNotePage from './pages/CreateNotePage';
 import EditNotePage from './pages/EditNotePage';
+import NotePage from './pages/NotePage';
+
 
 
 
@@ -35,6 +39,8 @@ function App() {
         <Route path='/notes' component={NotesHomePage} exact />
         <Route path='/createnote' component={CreateNotePage} exact />
         <Route path='/editnote/:id' component={EditNotePage} exact />
+        <Route path='/note/:id' component={NotePage} exact />
+        
         
         
 

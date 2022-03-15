@@ -26,6 +26,9 @@ const AppContext = ({children}) => {
     const [noteContent,setNoteContent] = useState("");
 
     const [editNoteId,setEditNoteId] = useState("");
+
+    const [viewNoteId,setViewNoteId] = useState("");
+    
     
 
     
@@ -36,7 +39,7 @@ const AppContext = ({children}) => {
         <ContextProvider.Provider value={
             {openLoginModal,setOpenLoginModal,authTab,setAuthTab,loginEmail,setLoginEmail,loginPassword,setLoginPassword,message,setMessage,loading,setLoading,showMessage,setShowMessage,snackbarVariant,setSnackbarVariant,
                 registerUsername,setRegisterUsername,registerEmail,setRegisterEmail,registerPassword,setRegisterPassword,registerConfirmPassword,setRegisterConfirmPassword,registerProfilePicture,setRegisterProfilePicture,
-                openNoteMarkdownModal,setOpenNoteMarkdownModal,noteContent,setNoteContent,editNoteId,setEditNoteId
+                openNoteMarkdownModal,setOpenNoteMarkdownModal,noteContent,setNoteContent,editNoteId,setEditNoteId,viewNoteId,setViewNoteId
         }}>
             {children}
         </ContextProvider.Provider>

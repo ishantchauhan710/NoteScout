@@ -8,7 +8,12 @@
     border: 2px solid var(--colorBorderLight);
     border-radius: 10px;
     box-shadow: 2px 3px 4px rgba(0,0,0,0.2);
+}
+
+.note-body {
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
 }
 
 .note:hover {
