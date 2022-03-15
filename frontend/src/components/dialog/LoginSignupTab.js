@@ -8,7 +8,7 @@ import {useHistory} from 'react-router-dom';
 
 export const LoginSignupTab = () => {
 
-    const {authTab,setAuthTab,loginEmail,setLoginEmail,loginPassword,setLoginPassword,setMessage,loading,setLoading,showMessage,setShowMessage,setSnackbarVariant,registerUsername,setRegisterUsername,registerEmail,setRegisterEmail,registerPassword,setRegisterPassword,registerConfirmPassword,setRegisterConfirmPassword,registerProfilePicture,setRegisterProfilePicture} = AppState();
+    const {authTab,setAuthTab,loginEmail,setLoginEmail,loginPassword,setLoginPassword,setMessage,loading,setLoading,showMessage,setShowMessage,setSnackbarVariant,registerUsername,setRegisterUsername,registerEmail,setRegisterEmail,registerPassword,setRegisterPassword,registerConfirmPassword,setRegisterConfirmPassword,registerProfilePicture,setRegisterProfilePicture,setOpenLoginModal} = AppState();
 
     const handleChange = (event, newTabValue) => {
       setAuthTab(newTabValue);
@@ -66,6 +66,7 @@ export const LoginSignupTab = () => {
             const {data} = await axios.post("/api/auth/login",{userEmail: loginEmail,userPassword: loginPassword},config);
             console.log('API Response:', data);
             localStorage.setItem('userDetails',JSON.stringify(data));
+            setOpenLoginModal(false);
             setLoading(false);
             history.push("/notes");
 
@@ -94,6 +95,7 @@ export const LoginSignupTab = () => {
           const {data} = await axios.post("/api/auth",{userName: registerUsername,userEmail: registerEmail,userPassword: registerPassword, userProfilePicture: registerProfilePicture},config);
           console.log('API Response:', data);
           localStorage.setItem('userDetails',JSON.stringify(data));
+          setOpenLoginModal(false);
           setLoading(false);
           history.push("/notes");
         } catch(e) {
