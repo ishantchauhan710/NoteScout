@@ -1,6 +1,6 @@
 
 .note {
-    width: 20%;
+    width: 25%;
     display: flex;
     margin: 20px;
     position: relative;
@@ -10,12 +10,6 @@
     box-shadow: 2px 3px 4px rgba(0,0,0,0.2);
 }
 
-.note-body {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-}
-
 .note:hover {
     outline: 3px solid var(--colorSecondary);
 }
@@ -23,6 +17,16 @@
 .note-image {
     border-radius: 7px 7px 0px 0px;
     margin: 2px;
+    width: auto;
+    height: 15em;
+    object-fit: cover;
+}
+
+.note-body {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .note-title {
@@ -30,6 +34,12 @@
     font-weight: 600;
     margin: 10px 10px 0 10px;
     color: var(--colorContentDarkPrimary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    line-clamp: 2; 
+    -webkit-box-orient: vertical;
 }
 
 .note-content {
@@ -53,13 +63,19 @@
     color: var(--colorContentDarkTertiary);
     font-size: 0.8rem;
     margin: 10px 10px 0 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; 
+    line-clamp: 1; 
+    -webkit-box-orient: vertical;
 }
 
 .note-date {
     align-self: flex-end;
     font-size: 0.8rem;
     font-weight: 400;
-    margin: 10px 10px 10px 10px;
+    margin: auto 10px 10px 10px;
     color: var(--colorContentDarkTertiary);
 }
 
@@ -87,13 +103,35 @@
     color: #ffffff;
 }
 
-@media(max-width:800px) {
+
+@media only screen and (min-width: 0px) and (max-width: 600px) {
     .note {
         width: 100%;
         display: flex;
+        border: 0;
         flex-direction: column;
+        margin: 10px 0;
     }
 }
 
+@media only screen and (min-width: 601px) and (max-width: 850px) {
+    .note {
+        width: 45%;
+        display: flex;
+        border: 0;
+        flex-direction: column;
+        margin: 10px;
+    }
+}
+
+@media only screen and (min-width: 851px) and (max-width: 1050px) {
+    .note {
+        width: 30%;
+        display: flex;
+        border: 0;
+        flex-direction: column;
+        margin: 10px;
+    }
+}
 
 

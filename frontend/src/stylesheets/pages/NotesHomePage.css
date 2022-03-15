@@ -16,7 +16,6 @@
     display: flex;
     margin: 2vw;
     flex-wrap: wrap;
-    align-items: flex-end;
     justify-content: center;
 }
 
@@ -34,7 +33,7 @@
     position: fixed;
     bottom: 0;
     right: 0;
-    margin: 0px 40px 60px 0;
+    margin: 0px 40px 40px 0;
     z-index: 1;
     cursor: pointer;
 }
@@ -43,7 +42,7 @@
     background-color: var(--colorPrimaryHover);
 }
 
-@media(max-width:800px) {
+@media only screen and (min-width: 0px) and (max-width: 600px) {
     .container-notes {
         flex-direction: column;
         flex-wrap: nowrap;
@@ -53,6 +52,34 @@
         width: 3rem;
         height: 3rem;
         font-size: 2rem;
+        margin: 0px 20px 20px 0;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 850px) {
+    .container-notes {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .btn-create-note {
+        width: 3rem;
+        height: 3rem;
+        font-size: 2rem;
+        margin: 0px 20px 20px 0;
+    }
+}
+
+@media only screen and (min-width: 851px) and (max-width: 1050px) {
+    .container-notes {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .btn-create-note {
+        width: 4rem;
+        height: 4rem;
+        font-size: 3rem;
         margin: 0px 20px 20px 0;
     }
 }
