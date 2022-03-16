@@ -111,8 +111,8 @@ The purpose of this project is to demonstrate how a person can
     └──
 
 ## Screenshots (Desktop) :computer:
-||||
-|:----------------------------------------:|:-----------------------------------------:|:-----------------------------------------: |
+|||
+|:----------------------------------------:|:-----------------------------------------: |
 | ![](screenshots/screenshot_landingpage.jpg) | ![](screenshots/screenshot_signuptab.jpg)
 | ![](screenshots/screenshot_noteshomepage.jpg) | ![](screenshots/screenshot_updatenote.jpg)  
 | ![](screenshots/screenshot_profilescreen.jpg) | ![](screenshots/screenshot_updatenote.jpg) 
