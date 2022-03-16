@@ -45,9 +45,9 @@ If you want to clone this project and customize it further, you need to do a cou
 * In the .env file, write:<br><br>
 
 ```
-PORT = 3000<br>
+PORT = 3000
 MONGO_URI=mongodb+srv://YOUR_MONGO_CLOUD_USERNAME:YOUR_MONGO_CLOUD_PASSWORD@cluster0.p5xoz.mongodb.net/Cluster0?retryWrites=true&w=majority<br>
-NODE_ENV=development<br>
+NODE_ENV=development
 JWT_CODE=YOUR_NAME
 ```
 
