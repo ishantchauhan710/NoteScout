@@ -1,4 +1,4 @@
-<img src="/screenshots/Screenshot1.png" width="70%" />
+<img src="/screenshots/Screenshot1.png" width="100%" />
 
 # NoteScout :blue_book:
 **NoteScout** is a fullstack web app that helps you easily create and organize your notes
@@ -7,7 +7,7 @@
 https://notescout.herokuapp.com/
 
 <br>
-<img src="/screenshots/Screenshot2.png" width="70%" />
+<img src="/screenshots/Screenshot2.png" width="100%" />
 
 ## About :dart:
 **NoteScout** lets users create an account on the server. Once successful, the users can easily create and organize their notes on the cloud storage. Additionally, the web app also lets a user create a note in **Markdown Format!**
@@ -20,7 +20,7 @@ The project at its core is built on MERN Stack which stands for (MongoDB, Expres
 * [MongoDB](https://www.mongodb.com/) - MongoDB is a NoSQL Database that unlike SQL, stores data in form of collections!
 
 <br><br>
-<img src="/screenshots/Screenshot3.png" width="70%" /><br>
+<img src="/screenshots/Screenshot3.png" width="100%" /><br>
 **NoteScout** is highly responsive in terms of its design! No matter what size of device you use, the web app will run perfectly fine on it!
 
 ## Supporting Libraries / Frameworks / Packages used &nbsp; 🛠
