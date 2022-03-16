@@ -71,7 +71,7 @@ The purpose of this project is to demonstrate how a person can
 * Create a [Restful API](https://en.wikipedia.org/wiki/Representational_state_transfer) in NodeJS
 * Perform [CRUD operations](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) on data in MongoDB
 * Store media data like user profile pictures on a cloud storage like [cloudinary](https://cloudinary.com/)
-* Deploy the app on a cloud hosting like [heroku](www.heroku.com)
+* Deploy the app on a cloud hosting like [heroku](https://www.heroku.com)
 
 ## Project Architecture and Structure :open_file_folder:
 <img src="/screenshots/AppStructure.png" width="100%" /><br>
