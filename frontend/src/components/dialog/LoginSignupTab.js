@@ -135,7 +135,7 @@ export const LoginSignupTab = () => {
                   <TextField type="password" onChange={(e) => setRegisterPassword(e.target.value)} id="outlined-basic" label="Password" style={{width: '100%', marginTop: 20}} variant="outlined" />
                   <TextField type="password" onChange={(e) => setRegisterConfirmPassword(e.target.value)} id="outlined-basic" label="Confirm Password" style={{width: '100%', marginTop: 20}} variant="outlined" />
 
-                  <TextField disabled onClick={() => {document.getElementById('filePicker').click()}} id="outlined-basic" label={registerProfilePicture?"Image Selected":"Choose Image"} style={{width: '100%', marginTop: 20}} variant="outlined" />
+                  <TextField onClick={() => {document.getElementById('filePicker').click()}} id="outlined-basic" label={registerProfilePicture?"Image Selected":"Choose Image"} style={{width: '100%', marginTop: 20}} variant="outlined" />
 
                   <input id='filePicker' type="file" onChange={(e) => configureProfilePicture(e.target.files[0])}  style={{display: "none"}} />
 
